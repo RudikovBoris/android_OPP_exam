@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Числа Цукермана</string>
+    <string name="desc">
+        <b>Описание</b>
+        \nПриложение для поиска чисел Цукермана в указанном
+        диапазоне. Числа Цукермана – это натуральные числа,
+        делящиеся нацело на произведение своих цифр.
+        Например, число 212, является числом Цукермана,
+        поскольку 212 / (2 * 1 * 2) = 53, а 53 это целое число
+    </string>
+    <string name="author">
+        <b>Автор</b>
+        \nРудиков Борис Николаевич, гр. ЗПИ-221 (ОмГТУ)
+        \nэл. почта: rudikov.boris@yandex.ru
+    </string>
+    <string name="sequence">
+        <b>Порядок действий</b>
+        \n1) ввести исходные данные
+        \n2) нажать на кнопку \"Начать поиск\"
+        \n3) см. \"Протокол\" для оценки полученных результатов
+    </string>
+    <string name="initial_data_title">Исходные данные</string>
+    <string name="search_button_text">Начать поиск</string>
+    <string name="log_title">Протокол</string>
+    <string name="clear_button_text">Очистить протокол</string>
+</resources>
