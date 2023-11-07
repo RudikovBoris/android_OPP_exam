@@ -2,24 +2,14 @@ package ru.rudikov_bn;
 
 import android.os.Bundle;
 
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.snackbar.Snackbar;
 import androidx.appcompat.app.AppCompatActivity;
-import android.view.View;
 
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
+import ru.rudikov_bn.baseFunction.BaseFunction;
+import ru.rudikov_bn.log.LogWindow;
 
-import ru.rudikov_bn.databinding.ActivityMainBinding;
-import ru.rudikov_bn.log.Log;
-import ru.rudikov_bn.zuckerman.Zuckerman;
-
-import android.view.Menu;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -29,54 +19,25 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
 
-        Log log = new Log((TextView) findViewById(R.id.log_id));
-        log.out("Запуск приложения");
+        LogWindow logWindow = new LogWindow( findViewById(R.id.log_id));
+        logWindow.out("Запуск приложения");
 
-        EditText rangeStart = (EditText) findViewById(R.id.range_start_id);
-        EditText rangeFinish = (EditText) findViewById(R.id.range_finish_id);
-        Button searchButton = (Button) findViewById(R.id.search_button_id);
 
-        searchButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-                int start = 0;
-                int finish = 0;
-                try {
-                    start = Integer.parseInt(rangeStart.getText().toString());
-                    finish = Integer.parseInt(rangeFinish.getText().toString());
+        EditText rangeStart =  findViewById(R.id.range_start_id);
+        EditText rangeFinish =  findViewById(R.id.range_finish_id);
 
-                    if(finish - start <=0) {
-                        throw new Exception("");
-                    }
+        BaseFunction baseFunction = new BaseFunction(logWindow, rangeStart, rangeFinish);
 
-                } catch (Exception e) {
-                    log.out("Ошибка в диапазоне поиска");
-                    return;
-                }
+        Button zuckermanButton = findViewById(R.id.search_button_zuckerman);
+        zuckermanButton.setOnClickListener(v -> baseFunction.getZuckerman());
 
-                log.out(
-                        String.format(
-                                "Диапазон поиска: от %d до %d", start, finish));
+        Button nivenButton = findViewById(R.id.search_button_niven);
+        nivenButton.setOnClickListener(v -> baseFunction.getNiven());
 
-                log.out("Поиск запущен");
-                for (int i = start; i <= finish; ++i) {
-                    if (Zuckerman.isVerify(i)) {
-                        log.out(i);
-                    }
-                }
-
-                log.out("Поиск завершен");
-            }
-        });
-
-        Button clearButton = (Button) findViewById(R.id.clear_button_id);
-        clearButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                log.clearView();
-            }
-        });
+        Button clearButton =  findViewById(R.id.clear_button_id);
+        clearButton.setOnClickListener(v -> logWindow.clearView());
     }
+
 
 }

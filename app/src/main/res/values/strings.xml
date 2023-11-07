@@ -20,7 +20,9 @@
         \n3) см. \"Протокол\" для оценки полученных результатов
     </string>
     <string name="initial_data_title">Исходные данные</string>
-    <string name="search_button_text">Начать поиск</string>
+    <string name="search_button_niven">niven</string>
+    <string name="search_button_zuckerman">zuckerman</string>
     <string name="log_title">Протокол</string>
     <string name="clear_button_text">Очистить протокол</string>
+
 </resources>

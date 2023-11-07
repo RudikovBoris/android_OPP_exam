@@ -9,10 +9,21 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+    <Button
+        android:id="@+id/search_button_niven"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="52dp"
+        android:text="@string/search_button_niven"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/search_button_zuckerman" />
+
     <TextView
         android:id="@+id/textView"
-        android:layout_width="0dp"
-        android:layout_height="103dp"
+        android:layout_width="418dp"
+        android:layout_height="48dp"
         android:text="@string/desc"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -67,23 +78,21 @@
         android:id="@+id/range_start_id"
         android:layout_width="75dp"
         android:layout_height="40dp"
+        android:layout_marginStart="24dp"
         android:inputType="numberSigned"
         android:minEms="5"
         android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="@+id/range_finish_id"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView6"
-        app:layout_constraintTop_toTopOf="@+id/range_finish_id"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintBottom_toBottomOf="@+id/textView5"
+        app:layout_constraintStart_toEndOf="@+id/textView5" />
 
     <TextView
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
         android:text="до"
         app:layout_constraintBottom_toBottomOf="@+id/range_finish_id"
-        app:layout_constraintStart_toEndOf="@+id/range_finish_id"
+        app:layout_constraintEnd_toStartOf="@+id/range_finish_id"
+        app:layout_constraintStart_toEndOf="@+id/range_start_id"
         app:layout_constraintTop_toTopOf="@+id/range_finish_id"
         app:layout_constraintVertical_bias="1.0" />
 
@@ -91,13 +100,13 @@
         android:id="@+id/range_finish_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="24dp"
         android:inputType="numberSigned"
         android:minEms="5"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.541"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.571"
+        app:layout_constraintStart_toEndOf="@+id/range_start_id"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <TextView
@@ -116,19 +125,18 @@
         android:id="@+id/clear_button_id"
         android:layout_width="0dp"
         android:layout_height="45dp"
-        android:layout_marginTop="8dp"
         android:text="@string/clear_button_text"
-        app:layout_constraintEnd_toEndOf="@+id/search_button_id"
+        app:layout_constraintEnd_toEndOf="@+id/search_button_zuckerman"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/search_button_id"
-        app:layout_constraintTop_toBottomOf="@+id/search_button_id" />
+        app:layout_constraintStart_toStartOf="@+id/search_button_zuckerman"
+        app:layout_constraintTop_toBottomOf="@+id/search_button_niven" />
 
     <Button
-        android:id="@+id/search_button_id"
+        android:id="@+id/search_button_zuckerman"
         android:layout_width="0dp"
         android:layout_height="45dp"
         android:layout_marginTop="24dp"
-        android:text="@string/search_button_text"
+        android:text="@string/search_button_zuckerman"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -136,13 +144,14 @@
 
     <TextView
         android:id="@+id/log_id"
-        android:layout_width="0dp"
-        android:layout_height="260dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="411dp"
+        android:layout_height="134dp"
         android:scrollbars="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/clear_button_id" />
+        app:layout_constraintTop_toBottomOf="@+id/clear_button_id"
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

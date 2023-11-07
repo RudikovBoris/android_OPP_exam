@@ -4,11 +4,20 @@ public class Array {
 
     public static int multiplicationItems(int[] items) {
         final int size = items.length;
-        int r = 1;
+        int result = 1;
         for (int i = 0; i < size; ++i) {
-            r *= items[i];
+            result *= items[i];
         }
-        return r;
+        return result;
+    }
+
+    public static int additionItems(int[] items) {
+        final int size = items.length;
+        int result = 1;
+        for (int i = 0; i < size; ++i) {
+            result += items[i];
+        }
+        return result;
     }
     
 }

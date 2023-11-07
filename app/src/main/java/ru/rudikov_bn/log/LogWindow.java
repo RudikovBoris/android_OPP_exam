@@ -7,21 +7,21 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-public class Log {
+public class LogWindow {
 
     private TextView textView;
 
-    public Log(TextView textView) {
+    public LogWindow(TextView textView) {
         this.textView = textView;
         this.textView.setMovementMethod(new ScrollingMovementMethod());
     }
 
     public void out(String msg) {
-        this.textView.append(String.format("[%s] %s\n", getDateTime(), msg));
+        this.textView.append("[" + getDateTime() + "] " + msg + "\n");
     }    
 
     public void out(int msg) {
-        this.textView.append(String.format("[%s] %d\n", getDateTime(), msg));
+        out(String.valueOf(msg));
     }
 
     public void clearView() {

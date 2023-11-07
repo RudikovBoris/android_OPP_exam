@@ -1,10 +1,17 @@
 package ru.rudikov_bn.zuckerman;
 
 
+import android.app.AppComponentFactory;
+import android.widget.EditText;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import ru.rudikov_bn.R;
 import ru.rudikov_bn.array.Array;
+import ru.rudikov_bn.log.LogWindow;
 import ru.rudikov_bn.number.Numeral;
 
-public class Zuckerman {
+public class Zuckerman extends AppCompatActivity {
 
     public static boolean isVerify(int value) {
         int[] digits = Numeral.getDigits(value);
@@ -16,4 +23,6 @@ public class Zuckerman {
         
         return value % r == 0;
     }
+
+
 }
