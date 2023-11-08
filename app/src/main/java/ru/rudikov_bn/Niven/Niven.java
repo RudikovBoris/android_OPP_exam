@@ -1,5 +1,7 @@
 package ru.rudikov_bn.Niven;
 
+import static ru.rudikov_bn.baseFunction.BaseFunction.getResultAdditionElementsNumber;
+
 import ru.rudikov_bn.Tasks;
 import ru.rudikov_bn.array.Array;
 import ru.rudikov_bn.number.Numeral;
@@ -11,8 +13,7 @@ public class Niven implements Tasks {
 // является числом Нивена, поскольку 1729 / (1 + 7 + 2 + 9) = 91, а 91 это целое число
 
     public static boolean isVerify(int value) {
-        int[] digits = Numeral.getDigits(value);
-        int r = Array.additionItems(digits);
+        int r = getResultAdditionElementsNumber(value);
 
         if (r == 0) {
             return false;

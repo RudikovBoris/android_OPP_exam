@@ -8,6 +8,7 @@ package ru.rudikov_bn.lishler;
 // Число 59 становится палиндромом после трех итераций: 59 + 95 = 154, 154 + 451 = 605, 605 + 506 = 1111.
 
 import ru.rudikov_bn.Tasks;
+import ru.rudikov_bn.baseFunction.BaseFunction;
 import ru.rudikov_bn.number.Numeral;
 
 public class Lishler implements Tasks {
@@ -17,22 +18,15 @@ public class Lishler implements Tasks {
     }
 
     public static boolean startLogic(int value, Integer countAddingNumberMirror){
-        int[] digits = Numeral.getDigits(value);
-        int correctLengthHalfArray = getLengthArray(digits);
-        boolean flagDigitsIsLishler = true;
+
+        boolean flagDigitsIsLishler = BaseFunction.valueIsPalindrome(value);
 
 
-
-        for (int i = 0; i < correctLengthHalfArray; i++) {
-            int reverseCount = digits.length - i - 1;
-            if (digits[i] != digits[reverseCount]) {
-                flagDigitsIsLishler = false;
-            }
-        }
 
         if((countAddingNumberMirror < 10) && (flagDigitsIsLishler == false)){
             countAddingNumberMirror ++;
-            return startLogic(addingNumberMirror(value), countAddingNumberMirror);
+            int addMirrorAndValue = value + BaseFunction.mirrorNumber(value);
+            return startLogic(addMirrorAndValue, countAddingNumberMirror);
 
         }
 
@@ -45,33 +39,10 @@ public class Lishler implements Tasks {
     }
     
 
-    private static int addingNumberMirror(int number){
-        int newNumber;
-        String numberString = Integer.toString(number);
-        String newMirrorNumberString = "";
 
 
-        for (int i = numberString.length() - 1 ; 0 <= i ; i--) {
-            newMirrorNumberString += numberString.charAt(i);
-        }
 
-        newNumber = Integer.parseInt(newMirrorNumberString);
 
-        return number + newNumber;
-    }
-
-    private static int getLengthArray(int[] digits) {
-        int newLengthArray;
-
-        if (digits.length % 2 != 0) {
-            newLengthArray = digits.length / 2 + 1;
-        } else {
-            newLengthArray = (digits.length / 2);
-        }
-
-        return newLengthArray;
-
-    }
 
 
 }

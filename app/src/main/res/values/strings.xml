@@ -23,7 +23,7 @@
     <string name="search_button_niven">niven</string>
     <string name="search_button_zuckerman">zuckerman</string>
     <string name="search_button_lishler">lishler</string>
-
+    <string name="search_button_best_number">Best number</string>
 
     <string name="log_title">Протокол</string>
     <string name="clear_button_text">Очистить протокол</string>

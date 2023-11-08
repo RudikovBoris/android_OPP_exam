@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import ru.rudikov_bn.Niven.Niven;
 import ru.rudikov_bn.baseFunction.BaseFunction;
+import ru.rudikov_bn.best_number.BestNumber;
 import ru.rudikov_bn.lishler.Lishler;
 import ru.rudikov_bn.log.LogWindow;
 import ru.rudikov_bn.zuckerman.Zuckerman;
@@ -43,6 +44,11 @@ public class MainActivity extends AppCompatActivity {
         Button lisherButton = findViewById(R.id.search_button_lishler);
         Lishler lishler = new Lishler();
         lisherButton.setOnClickListener(v -> baseFunction.getResultCalculation(lishler));
+
+        Button bestNumberButton = findViewById(R.id.search_button_best_number);
+        BestNumber bestNumber = new BestNumber();
+        bestNumberButton.setOnClickListener(v -> baseFunction.getResultCalculation(bestNumber));
+
 
         Button clearButton =  findViewById(R.id.clear_button_id);
         clearButton.setOnClickListener(v -> logWindow.clearView());
