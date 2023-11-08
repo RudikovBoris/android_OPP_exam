@@ -22,6 +22,7 @@ public class BestNumber implements Tasks {
          if (!checkToSimpleNumberAndHisMirrorNumber(value)
             || !checkToValueMirrorHasCountNumberMirror(value)
             || !numberInBinaryCodingIsPalindrome(value)){
+
             return false;
         }
 
