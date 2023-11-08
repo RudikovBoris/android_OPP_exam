@@ -22,6 +22,9 @@
     <string name="initial_data_title">Исходные данные</string>
     <string name="search_button_niven">niven</string>
     <string name="search_button_zuckerman">zuckerman</string>
+    <string name="search_button_lishler">lishler</string>
+
+
     <string name="log_title">Протокол</string>
     <string name="clear_button_text">Очистить протокол</string>
 

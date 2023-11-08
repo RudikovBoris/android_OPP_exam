@@ -10,9 +10,31 @@
     tools:context=".MainActivity">
 
     <Button
+        android:id="@+id/search_button_lishler"
+        android:layout_width="125dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/search_button_lishler"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.468"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/range_finish_id" />
+
+    <Button
+        android:id="@+id/search_button_zuckerman3"
+        android:layout_width="125dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/search_button_zuckerman"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.944"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/range_finish_id" />
+
+    <Button
         android:id="@+id/search_button_niven"
-        android:layout_width="0dp"
-        android:layout_height="45dp"
+        android:layout_width="125dp"
+        android:layout_height="38dp"
         android:layout_marginTop="52dp"
         android:text="@string/search_button_niven"
         app:layout_constraintEnd_toEndOf="parent"
@@ -123,8 +145,8 @@
 
     <Button
         android:id="@+id/clear_button_id"
-        android:layout_width="0dp"
-        android:layout_height="45dp"
+        android:layout_width="408dp"
+        android:layout_height="38dp"
         android:text="@string/clear_button_text"
         app:layout_constraintEnd_toEndOf="@+id/search_button_zuckerman"
         app:layout_constraintHorizontal_bias="0.0"
@@ -133,8 +155,8 @@
 
     <Button
         android:id="@+id/search_button_zuckerman"
-        android:layout_width="0dp"
-        android:layout_height="45dp"
+        android:layout_width="127dp"
+        android:layout_height="42dp"
         android:layout_marginTop="24dp"
         android:text="@string/search_button_zuckerman"
         app:layout_constraintEnd_toEndOf="parent"
