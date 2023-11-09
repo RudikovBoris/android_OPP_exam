@@ -8,8 +8,7 @@ package ru.rudikov_bn.lishler;
 // Число 59 становится палиндромом после трех итераций: 59 + 95 = 154, 154 + 451 = 605, 605 + 506 = 1111.
 
 import ru.rudikov_bn.Tasks;
-import ru.rudikov_bn.baseFunction.BaseFunction;
-import ru.rudikov_bn.number.Numeral;
+import ru.rudikov_bn.base_function.BaseFunction;
 
 public class Lishler implements Tasks {
     public static boolean isVerify(int value) {
@@ -17,32 +16,19 @@ public class Lishler implements Tasks {
         return startLogic(value, countAddingNumberMirror);
     }
 
-    public static boolean startLogic(int value, Integer countAddingNumberMirror){
+    public static boolean startLogic(int value, Integer countAddingNumberMirror) {
 
         boolean flagDigitsIsLishler = BaseFunction.valueIsPalindrome(value);
 
-
-
-        if((countAddingNumberMirror < 10) && (flagDigitsIsLishler == false)){
-            countAddingNumberMirror ++;
+        if ((countAddingNumberMirror < 10) && flagDigitsIsLishler) {
+            countAddingNumberMirror++;
             int addMirrorAndValue = value + BaseFunction.mirrorNumber(value);
             return startLogic(addMirrorAndValue, countAddingNumberMirror);
 
         }
 
-
-        if (flagDigitsIsLishler){
-            return true;
-        }else {
-            return false;
-        }
+        return flagDigitsIsLishler;
     }
-    
-
-
-
-
-
 
 
 }

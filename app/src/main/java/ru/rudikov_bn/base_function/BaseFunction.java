@@ -1,14 +1,17 @@
-package ru.rudikov_bn.baseFunction;
+package ru.rudikov_bn.base_function;
 
 import android.widget.EditText;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import ru.rudikov_bn.Niven.Niven;
+import ru.rudikov_bn.kaprecara.Kapricara;
+import ru.rudikov_bn.kita1.Kita;
+import ru.rudikov_bn.niven1.Niven;
 import ru.rudikov_bn.Tasks;
 import ru.rudikov_bn.array.Array;
 import ru.rudikov_bn.best_number.BestNumber;
+import ru.rudikov_bn.happy_number.HappyNumber;
 import ru.rudikov_bn.lishler.Lishler;
 import ru.rudikov_bn.log.LogWindow;
 import ru.rudikov_bn.number.Numeral;
@@ -18,7 +21,8 @@ public class BaseFunction {
     LogWindow logWindow;
     EditText rangeStart;
     EditText rangeFinish;
-    int start, finish;
+    int start;
+    int finish;
 
     public BaseFunction(LogWindow logWindow, EditText rangeStart, EditText rangeFinish) {
         this.logWindow = logWindow;
@@ -45,7 +49,7 @@ public class BaseFunction {
         }
 
 
-        logWindow.out(String.format("Диапазон поиска: от " + start + " до " + finish));
+        logWindow.out(String.format("Диапазон поиска: от %s  до %s %n",start, finish));
 
         logWindow.out("Поиск запущен");
         for (int i = start; i <= finish; ++i) {
@@ -58,37 +62,25 @@ public class BaseFunction {
     }
 
     public static boolean fabricTasks(Tasks tasks, int number) {
-        Tasks myClass;
-        if (tasks.getClass().equals(Zuckerman.class)) {
-            if (Zuckerman.isVerify(number)) {
-                return true;
-            }
-        } else if (tasks.getClass().equals(Niven.class)) {
-            if (Niven.isVerify(number)) {
-                return true;
-            }
-        } else if (tasks.getClass().equals(Lishler.class)) {
-            if (Lishler.isVerify(number)) {
-                return true;
-            }
-        } else if (tasks.getClass().equals(BestNumber.class)) {
-            if (BestNumber.isVerify(number)) {
-                return true;
-            }
-        }
-        return false;
+
+        return (tasks.getClass().equals(Zuckerman.class) && Zuckerman.isVerify(number)) ||
+                (tasks.getClass().equals(Niven.class) && Niven.isVerify(number)) ||
+                (tasks.getClass().equals(Lishler.class) && Lishler.isVerify(number)) ||
+                (tasks.getClass().equals(BestNumber.class) && BestNumber.isVerify(number)) ||
+                (tasks.getClass().equals(HappyNumber.class) && HappyNumber.isVerify(number)) ||
+                (tasks.getClass().equals(Kita.class) && Kita.isVerify(number)) ||
+                (tasks.getClass().equals(Kapricara.class) && Kapricara.isVerify(number));
     }
     public static int mirrorNumber(int number){
         int newNumber;
         String numberString = Integer.toString(number);
-        String newMirrorNumberString = "";
-
+        StringBuilder newMirrorNumberString = new StringBuilder();
 
         for (int i = numberString.length() - 1 ; 0 <= i ; i--) {
-            newMirrorNumberString += numberString.charAt(i);
+            newMirrorNumberString.append(numberString.charAt(i));
         }
 
-        newNumber = Integer.parseInt(newMirrorNumberString);
+        newNumber = Integer.parseInt(String.valueOf(newMirrorNumberString));
 
         return newNumber;
     }
@@ -112,7 +104,7 @@ public class BaseFunction {
 
             if(BaseFunction.simpleNumber(i)){
                 countSimpleNumber++;
-                simpleNumberWithThemCount.put((Integer) i, countSimpleNumber);
+                simpleNumberWithThemCount.put(i, countSimpleNumber);
             }
 
         }

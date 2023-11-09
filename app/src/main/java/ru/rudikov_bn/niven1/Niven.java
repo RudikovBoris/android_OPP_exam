@@ -1,10 +1,8 @@
-package ru.rudikov_bn.Niven;
+package ru.rudikov_bn.niven1;
 
-import static ru.rudikov_bn.baseFunction.BaseFunction.getResultAdditionElementsNumber;
+import static ru.rudikov_bn.base_function.BaseFunction.getResultAdditionElementsNumber;
 
 import ru.rudikov_bn.Tasks;
-import ru.rudikov_bn.array.Array;
-import ru.rudikov_bn.number.Numeral;
 
 public class Niven implements Tasks {
 //Разработать программу для поиска чисел Нивена. Числа Нивена – это натуральные числа, делящиеся нацело на сумму своих цифр. Например, число 1729,

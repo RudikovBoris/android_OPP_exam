@@ -1,10 +1,8 @@
 package ru.rudikov_bn.best_number;
 
-import java.util.HashMap;
 import java.util.Map;
-
 import ru.rudikov_bn.Tasks;
-import ru.rudikov_bn.baseFunction.BaseFunction;
+import ru.rudikov_bn.base_function.BaseFunction;
 
 //Разработать программу для доказательства того, что 73 – это лучшее число. Число 73 считается лучшим числом, поскольку одновременное соответствует
 //следующим условиям:
@@ -14,19 +12,16 @@ import ru.rudikov_bn.baseFunction.BaseFunction;
 //- если умножить 7 и 3, то получится 21
 //- в бинарном виде 73 = 1001001, что является палиндромом
 public class BestNumber implements Tasks {
+
+
     public static boolean isVerify(int value) {
         return startLogic(value);
     }
 
     public static boolean startLogic(int value){
-         if (!checkToSimpleNumberAndHisMirrorNumber(value)
-            || !checkToValueMirrorHasCountNumberMirror(value)
-            || !numberInBinaryCodingIsPalindrome(value)){
-
-            return false;
-        }
-
-        return true;
+        return checkToSimpleNumberAndHisMirrorNumber(value)
+                && checkToValueMirrorHasCountNumberMirror(value)
+                && numberInBinaryCodingIsPalindrome(value);
     }
 
     private static boolean checkToSimpleNumberAndHisMirrorNumber(int value){

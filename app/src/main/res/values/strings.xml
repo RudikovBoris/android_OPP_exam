@@ -24,6 +24,12 @@
     <string name="search_button_zuckerman">zuckerman</string>
     <string name="search_button_lishler">lishler</string>
     <string name="search_button_best_number">Best number</string>
+    <string name="search_button_happy_number">Happy number</string>
+    <string name="search_button_kaprecara">kaprecara</string>
+    <string name="search_button_kita">kita</string>
+    <string name="search_button_kita2">kita</string>
+    <string name="search_button_kita3">kita</string>
+    <string name="search_button_kita4">kita</string>
 
     <string name="log_title">Протокол</string>
     <string name="clear_button_text">Очистить протокол</string>
