@@ -10,7 +10,8 @@ import ru.rudikov_bn.number.Numeral;
  * Например, число 153, является числом Армстронга, поскольку 1^3 + 5^3 + 3^3 = 153
  */
 public class Armstrong implements Tasks {
-    public static boolean isVerify(int value) {
+
+    public boolean isVerify(int value) {
         int[] digits = Numeral.getDigits(value);
         int result = 0;
         for (int oneElement: digits){
@@ -19,7 +20,7 @@ public class Armstrong implements Tasks {
         return result == value;
     }
 
-    private static int exponentiation(int value, int exponent){
+    private int exponentiation(int value, int exponent){
         int result = 1;
         for (int i = 1; i <= exponent; i++) {
             result *= value;

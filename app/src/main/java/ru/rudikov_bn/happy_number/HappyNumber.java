@@ -15,20 +15,21 @@ import ru.rudikov_bn.number.Numeral;
 //        1^2+0^2=1
 public class HappyNumber implements Tasks {
 
-    public static boolean isVerify(int value) {
+
+    public boolean isVerify(int value) {
         Integer countSteps = 0;
         return happyNumberLogic(value, countSteps);
     }
 
-    private static boolean happyNumberLogic(int value, Integer countSteps){
+    private static boolean happyNumberLogic(int value, Integer countSteps) {
         countSteps++;
         int[] digits = Numeral.getDigits(value);
         int newValue = 0;
-        for ( int oneElement : digits){
+        for (int oneElement : digits) {
             newValue += oneElement * oneElement;
         }
 
-        if (countSteps <=7){
+        if (countSteps <= 7) {
             return happyNumberLogic(newValue, countSteps);
         }
 

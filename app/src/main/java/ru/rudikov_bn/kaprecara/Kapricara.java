@@ -28,11 +28,12 @@ import ru.rudikov_bn.number.Numeral;
  * 7641 − 1467 = 6174.
  */
 public class Kapricara implements Tasks {
-    public static boolean isVerify(int value) {
 
-        for(int iteratorSteps = 0;iteratorSteps < 7; iteratorSteps++){
+    public boolean isVerify(int value) {
+
+        for (int iteratorSteps = 0; iteratorSteps < 7; iteratorSteps++) {
             value = logicKapricara(value);
-            if(value == 6174) {
+            if (value == 6174) {
                 return true;
             }
         }

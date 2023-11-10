@@ -16,23 +16,25 @@ import java.util.ArrayList;
 import ru.rudikov_bn.Tasks;
 
 public class FriendsNumber implements Tasks {
-    public static boolean isVerify(int value) {
+
+
+    public boolean isVerify(int value) {
         int firstFriend = foundFriend(value);
         int secondFriends = foundFriend(firstFriend);
 
         return value == secondFriends;
     }
 
-    public static int foundFriend(int value){
+    public int foundFriend(int value) {
         ArrayList<Integer> arrayList = new ArrayList<>();
         for (int result = 1; result < value; result++) {
-            if(value % result == 0){
+            if (value % result == 0) {
                 arrayList.add(result);
             }
 
-      }
+        }
         int result = 0;
-        for (Integer oneElement: arrayList) {
+        for (Integer oneElement : arrayList) {
             result += oneElement;
         }
         return result;

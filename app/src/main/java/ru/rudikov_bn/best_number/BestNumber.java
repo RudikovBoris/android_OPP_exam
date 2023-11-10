@@ -13,8 +13,7 @@ import ru.rudikov_bn.base_function.BaseFunction;
 //- в бинарном виде 73 = 1001001, что является палиндромом
 public class BestNumber implements Tasks {
 
-
-    public static boolean isVerify(int value) {
+    public boolean isVerify(int value) {
         return startLogic(value);
     }
 

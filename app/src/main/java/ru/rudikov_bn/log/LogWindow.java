@@ -18,7 +18,7 @@ public class LogWindow {
 
     public void out(String msg) {
         this.textView.append("[" + getDateTime() + "] " + msg + "\n");
-    }    
+    }
 
     public void out(int msg) {
         out(String.valueOf(msg));

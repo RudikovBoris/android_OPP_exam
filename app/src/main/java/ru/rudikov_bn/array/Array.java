@@ -1,6 +1,8 @@
 package ru.rudikov_bn.array;
 
-public class Array {
+public final class Array {
+    private Array() {
+    }
 
     public static int multiplicationItems(int[] items) {
         final int size = items.length;
@@ -19,5 +21,5 @@ public class Array {
         }
         return result;
     }
-    
+
 }

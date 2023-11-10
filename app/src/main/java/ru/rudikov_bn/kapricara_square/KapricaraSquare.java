@@ -17,7 +17,7 @@ import ru.rudikov_bn.number.Numeral;
  */
 public class KapricaraSquare implements Tasks {
 
-    public static boolean isVerify(int value) {
+    public boolean isVerify(int value) {
         int square = value * value;
         int[] digitsSquare = Numeral.getDigits(square);
         for (int i = 0; i < digitsSquare.length - 1; i++) {
@@ -33,7 +33,7 @@ public class KapricaraSquare implements Tasks {
             }
             int firstNumber = Integer.parseInt(String.valueOf(stringBuilderFirstNumber));
             int secondNumber = Integer.parseInt(String.valueOf(stringBuilderSecondNumber));
-            if (firstNumber + secondNumber == value){
+            if (firstNumber + secondNumber == value) {
                 return true;
             }
         }

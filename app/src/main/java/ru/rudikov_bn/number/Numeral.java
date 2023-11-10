@@ -1,7 +1,9 @@
 package ru.rudikov_bn.number;
 
 public class Numeral {
-  
+    private Numeral() {
+    }
+
     public static int[] getDigits(int value) {
         String buf = Integer.toString(value);
 
@@ -13,5 +15,5 @@ public class Numeral {
 
         return digits;
     }
-  
+
 }
