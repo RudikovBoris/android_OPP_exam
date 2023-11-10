@@ -27,9 +27,9 @@
     <string name="search_button_happy_number">Happy number</string>
     <string name="search_button_kaprecara">kaprecara</string>
     <string name="search_button_kita">kita</string>
-    <string name="search_button_kita2">kita</string>
-    <string name="search_button_kita3">kita</string>
-    <string name="search_button_kita4">kita</string>
+    <string name="search_button_kaprecara_square">kaprecara square</string>
+    <string name="search_button_armstrong">armstrong</string>
+    <string name="search_button_friends_numbers">friends</string>
 
     <string name="log_title">Протокол</string>
     <string name="clear_button_text">Очистить протокол</string>

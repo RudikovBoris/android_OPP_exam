@@ -55,24 +55,24 @@
         app:layout_constraintTop_toTopOf="@+id/search_button_zuckerman" />
 
     <Button
-        android:id="@+id/search_button_niven3"
-        android:layout_width="125dp"
-        android:layout_height="38dp"
-        android:layout_marginTop="104dp"
-        android:text="@string/search_button_niven"
+        android:id="@+id/search_button_kaprecara_square"
+        android:layout_width="129dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="108dp"
+        android:text="@string/search_button_kaprecara_square"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.482"
+        app:layout_constraintHorizontal_bias="0.957"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/search_button_zuckerman" />
 
     <Button
-        android:id="@+id/search_button_niven4"
+        android:id="@+id/search_button_armstrong"
         android:layout_width="125dp"
         android:layout_height="38dp"
         android:layout_marginTop="104dp"
-        android:text="@string/search_button_niven"
+        android:text="@string/search_button_armstrong"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.961"
+        app:layout_constraintHorizontal_bias="0.482"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/search_button_zuckerman" />
 
@@ -195,7 +195,7 @@
         android:id="@+id/clear_button_id"
         android:layout_width="408dp"
         android:layout_height="38dp"
-        android:layout_marginTop="96dp"
+        android:layout_marginTop="104dp"
         android:text="@string/clear_button_text"
         app:layout_constraintEnd_toEndOf="@+id/search_button_zuckerman"
         app:layout_constraintHorizontal_bias="0.0"
@@ -203,11 +203,11 @@
         app:layout_constraintTop_toBottomOf="@+id/search_button_niven" />
 
     <Button
-        android:id="@+id/search_button_niven5"
+        android:id="@+id/search_button_friends_numbers"
         android:layout_width="125dp"
         android:layout_height="38dp"
         android:layout_marginTop="148dp"
-        android:text="@string/search_button_niven"
+        android:text="@string/search_button_friends_numbers"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -226,14 +226,11 @@
 
     <TextView
         android:id="@+id/log_id"
-        android:layout_width="411dp"
-        android:layout_height="134dp"
+        android:layout_width="417dp"
+        android:layout_height="259dp"
         android:scrollbars="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/clear_button_id"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/clear_button_id" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,9 +4,12 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import ru.rudikov_bn.armstrong.Armstrong;
+import ru.rudikov_bn.friends_number.FriendsNumber;
 import ru.rudikov_bn.kaprecara.Kapricara;
-import ru.rudikov_bn.kita1.Kita;
-import ru.rudikov_bn.niven1.Niven;
+import ru.rudikov_bn.kapricara_square.KapricaraSquare;
+import ru.rudikov_bn.kita_package.Kita;
+import ru.rudikov_bn.niven_pacage.Niven;
 import ru.rudikov_bn.base_function.BaseFunction;
 import ru.rudikov_bn.best_number.BestNumber;
 import ru.rudikov_bn.happy_number.HappyNumber;
@@ -54,6 +57,16 @@ public class MainActivity extends AppCompatActivity {
 
         Button kaprecaraNumberButton = findViewById(R.id.search_button_kaprecara);
         kaprecaraNumberButton.setOnClickListener(v -> baseFunction.getResultCalculation(new Kapricara()));
+
+        Button kaprecaraSquareNumberButton = findViewById(R.id.search_button_kaprecara_square);
+        kaprecaraSquareNumberButton.setOnClickListener(v -> baseFunction.getResultCalculation(new KapricaraSquare()));
+
+        Button armstrongButton = findViewById(R.id.search_button_armstrong);
+        armstrongButton.setOnClickListener(v -> baseFunction.getResultCalculation(new Armstrong()));
+
+        Button frandsButton = findViewById(R.id.search_button_friends_numbers);
+        frandsButton.setOnClickListener(v -> baseFunction.getResultCalculation(new FriendsNumber()));
+
 
         Button clearButton =  findViewById(R.id.clear_button_id);
         clearButton.setOnClickListener(v -> logWindow.clearView());

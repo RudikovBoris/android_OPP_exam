@@ -5,9 +5,12 @@ import android.widget.EditText;
 import java.util.HashMap;
 import java.util.Map;
 
+import ru.rudikov_bn.armstrong.Armstrong;
+import ru.rudikov_bn.friends_number.FriendsNumber;
 import ru.rudikov_bn.kaprecara.Kapricara;
-import ru.rudikov_bn.kita1.Kita;
-import ru.rudikov_bn.niven1.Niven;
+import ru.rudikov_bn.kapricara_square.KapricaraSquare;
+import ru.rudikov_bn.kita_package.Kita;
+import ru.rudikov_bn.niven_pacage.Niven;
 import ru.rudikov_bn.Tasks;
 import ru.rudikov_bn.array.Array;
 import ru.rudikov_bn.best_number.BestNumber;
@@ -34,10 +37,22 @@ public class BaseFunction {
 
     public void getResultCalculation(Tasks tasks) {
 
-        this.start = Integer.parseInt(rangeStart.getText().toString());
-        this.finish = Integer.parseInt(rangeFinish.getText().toString());
 
 
+
+        if (!rangeStart.getText().toString().equals("")) {
+            this.start = Integer.parseInt(rangeStart.getText().toString());
+        }else {
+            logWindow.out("Не устанвленно первое число");
+            return;
+        }
+
+        if (!rangeFinish.getText().toString().equals("")) {
+            this.finish = Integer.parseInt(rangeFinish.getText().toString());
+        }else {
+            logWindow.out("Не установленно второе число");
+            return;
+        }
         if (finish - start <= 0) {
             logWindow.out("Ошибка в диапазоне поиска");
             return;
@@ -69,7 +84,10 @@ public class BaseFunction {
                 (tasks.getClass().equals(BestNumber.class) && BestNumber.isVerify(number)) ||
                 (tasks.getClass().equals(HappyNumber.class) && HappyNumber.isVerify(number)) ||
                 (tasks.getClass().equals(Kita.class) && Kita.isVerify(number)) ||
-                (tasks.getClass().equals(Kapricara.class) && Kapricara.isVerify(number));
+                (tasks.getClass().equals(Kapricara.class) && Kapricara.isVerify(number)) ||
+                (tasks.getClass().equals(KapricaraSquare.class) && KapricaraSquare.isVerify(number))||
+                (tasks.getClass().equals(Armstrong.class) && Armstrong.isVerify(number)) ||
+                (tasks.getClass().equals(FriendsNumber.class) && FriendsNumber.isVerify(number));
     }
     public static int mirrorNumber(int number){
         int newNumber;

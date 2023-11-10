@@ -1,4 +1,4 @@
-package ru.rudikov_bn.kita1;
+package ru.rudikov_bn.kita_package;
 
 import ru.rudikov_bn.Tasks;
 import ru.rudikov_bn.number.Numeral;
