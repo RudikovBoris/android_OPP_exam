@@ -69,3 +69,7 @@ Q.idea/sonarlint/securityhotspotstore/e/2/e23cb4e32a863beffef0f88181b14c0579a47f
 Q.idea/sonarlint/securityhotspotstore/c/1/c10d2ac19e28288d6573755b34ef1d0d93e15f4a,6\8\684c8da014cd59b9d2496d19a04abfa6b9602c38
 Å
 Q.idea/sonarlint/securityhotspotstore/3/2/329c254bfb7366cccdab146a53960b1b3463849e,e\9\e9e493cfb9864ee1f9a261ac9b9ba44615cd9f56
+@
+build.gradle.kts,d\b\dbcff70658daf80b53ce624f6adcaa529df5ed8d
+P
+ app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
