@@ -1,4 +1,4 @@
-package ru.rudikov_bn.kita_package;
+package ru.rudikov_bn.tasks.kita;
 
 import ru.rudikov_bn.Tasks;
 import ru.rudikov_bn.number.Numeral;
@@ -39,7 +39,7 @@ public class Kita implements Tasks {
         return false;
     }
 
-    private static int[] searchKeta(int[] digits) {
+    private int[] searchKeta(int[] digits) {
         int[] templeArray = new int[digits.length];
         int templeResult = 0;
         for (int i = 0; i < digits.length; i++) {

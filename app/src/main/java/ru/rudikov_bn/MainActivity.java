@@ -4,24 +4,25 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import ru.rudikov_bn.armstrong.Armstrong;
-import ru.rudikov_bn.friends_number.FriendsNumber;
-import ru.rudikov_bn.kaprecara.Kapricara;
-import ru.rudikov_bn.kapricara_square.KapricaraSquare;
-import ru.rudikov_bn.kita_package.Kita;
-import ru.rudikov_bn.niven_pacage.Niven;
+import ru.rudikov_bn.tasks.armstrong.Armstrong;
+import ru.rudikov_bn.tasks.friends_number.FriendsNumber;
+import ru.rudikov_bn.tasks.kaprecara.Kapricara;
+import ru.rudikov_bn.tasks.kapricara_square.KapricaraSquare;
+import ru.rudikov_bn.tasks.kita.Kita;
+import ru.rudikov_bn.tasks.niven.Niven;
 import ru.rudikov_bn.base_function.BaseFunction;
-import ru.rudikov_bn.best_number.BestNumber;
-import ru.rudikov_bn.happy_number.HappyNumber;
-import ru.rudikov_bn.lishler.Lishler;
+import ru.rudikov_bn.tasks.best_number.BestNumber;
+import ru.rudikov_bn.tasks.happy_number.HappyNumber;
+import ru.rudikov_bn.tasks.lishler.Lishler;
 import ru.rudikov_bn.log.LogWindow;
-import ru.rudikov_bn.zuckerman.Zuckerman;
+import ru.rudikov_bn.tasks.zuckerman.Zuckerman;
 
 import android.widget.Button;
 import android.widget.EditText;
 
 
 public class MainActivity extends AppCompatActivity {
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -38,34 +39,34 @@ public class MainActivity extends AppCompatActivity {
         BaseFunction baseFunction = new BaseFunction(logWindow, rangeStart, rangeFinish);
 
         Button zuckermanButton = findViewById(R.id.search_button_zuckerman);
-        zuckermanButton.setOnClickListener(v -> baseFunction.getResultCalculation(Zuckerman.class));
+        zuckermanButton.setOnClickListener(v -> baseFunction.getResultCalculation(new Zuckerman()));
 
         Button nivenButton = findViewById(R.id.search_button_niven);
-        nivenButton.setOnClickListener(v -> baseFunction.getResultCalculation(Niven.class));
+        nivenButton.setOnClickListener(v -> baseFunction.getResultCalculation(new Niven()));
 
         Button lisherButton = findViewById(R.id.search_button_lishler);
-        lisherButton.setOnClickListener(v -> baseFunction.getResultCalculation(Lishler.class));
+        lisherButton.setOnClickListener(v -> baseFunction.getResultCalculation(new Lishler()));
 
         Button bestNumberButton = findViewById(R.id.search_button_best_number);
-        bestNumberButton.setOnClickListener(v -> baseFunction.getResultCalculation(BestNumber.class));
+        bestNumberButton.setOnClickListener(v ->baseFunction.getResultCalculation(new BestNumber()));
 
         Button happyNumberButton = findViewById(R.id.search_button_happy_number);
-        happyNumberButton.setOnClickListener(v -> baseFunction.getResultCalculation(HappyNumber.class));
+        happyNumberButton.setOnClickListener(v -> baseFunction.getResultCalculation(new HappyNumber()));
 
         Button kitaNumberButton = findViewById(R.id.search_button_kita);
-        kitaNumberButton.setOnClickListener(v -> baseFunction.getResultCalculation(Kita.class));
+        kitaNumberButton.setOnClickListener(v -> baseFunction.getResultCalculation(new Kita()));
 
         Button kaprecaraNumberButton = findViewById(R.id.search_button_kaprecara);
-        kaprecaraNumberButton.setOnClickListener(v -> baseFunction.getResultCalculation(Kapricara.class));
+        kaprecaraNumberButton.setOnClickListener(v -> baseFunction.getResultCalculation(new Kapricara()));
 
         Button kaprecaraSquareNumberButton = findViewById(R.id.search_button_kaprecara_square);
-        kaprecaraSquareNumberButton.setOnClickListener(v -> baseFunction.getResultCalculation(KapricaraSquare.class));
+        kaprecaraSquareNumberButton.setOnClickListener(v -> baseFunction.getResultCalculation(new KapricaraSquare()));
 
         Button armstrongButton = findViewById(R.id.search_button_armstrong);
-        armstrongButton.setOnClickListener(v -> baseFunction.getResultCalculation(Armstrong.class));
+        armstrongButton.setOnClickListener(v -> baseFunction.getResultCalculation(new Armstrong()));
 
         Button frandsButton = findViewById(R.id.search_button_friends_numbers);
-        frandsButton.setOnClickListener(v -> baseFunction.getResultCalculation(FriendsNumber.class));
+        frandsButton.setOnClickListener(v -> baseFunction.getResultCalculation(new FriendsNumber()));
 
 
         Button clearButton = findViewById(R.id.clear_button_id);

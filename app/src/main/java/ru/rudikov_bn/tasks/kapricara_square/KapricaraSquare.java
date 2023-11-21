@@ -1,4 +1,4 @@
-package ru.rudikov_bn.kapricara_square;
+package ru.rudikov_bn.tasks.kapricara_square;
 
 import ru.rudikov_bn.Tasks;
 import ru.rudikov_bn.number.Numeral;

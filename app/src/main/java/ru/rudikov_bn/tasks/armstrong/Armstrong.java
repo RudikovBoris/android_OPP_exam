@@ -1,4 +1,4 @@
-package ru.rudikov_bn.armstrong;
+package ru.rudikov_bn.tasks.armstrong;
 
 import ru.rudikov_bn.Tasks;
 import ru.rudikov_bn.number.Numeral;

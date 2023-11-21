@@ -1,4 +1,4 @@
-package ru.rudikov_bn.kaprecara;
+package ru.rudikov_bn.tasks.kaprecara;
 
 import ru.rudikov_bn.Tasks;
 import ru.rudikov_bn.number.Numeral;
@@ -40,7 +40,7 @@ public class Kapricara implements Tasks {
         return false;
     }
 
-    public static int logicKapricara(int value) {
+    private int logicKapricara(int value) {
         int[] digits = Numeral.getDigits(value);
         StringBuilder stringBuilder = bubbleSorting(digits);
         String correctPlaceElement = String.valueOf(stringBuilder);
@@ -50,7 +50,7 @@ public class Kapricara implements Tasks {
         return Integer.parseInt(reversePlaceElement) - Integer.parseInt(correctPlaceElement);
     }
 
-    private static StringBuilder bubbleSorting(int[] value) {
+    private StringBuilder bubbleSorting(int[] value) {
         int templeVariable;
         for (int baseIterator = 0; baseIterator < value.length; baseIterator++) {
             for (int i = 0; i < value.length - 1; i++) {

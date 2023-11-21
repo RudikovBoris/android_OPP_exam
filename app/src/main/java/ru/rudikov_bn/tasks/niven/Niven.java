@@ -1,4 +1,4 @@
-package ru.rudikov_bn.niven_pacage;
+package ru.rudikov_bn.tasks.niven;
 
 import static ru.rudikov_bn.base_function.BaseFunction.getResultAdditionElementsNumber;
 

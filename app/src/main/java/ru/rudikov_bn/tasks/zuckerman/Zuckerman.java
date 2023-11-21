@@ -1,12 +1,11 @@
-package ru.rudikov_bn.zuckerman;
+package ru.rudikov_bn.tasks.zuckerman;
 
-import androidx.appcompat.app.AppCompatActivity;
 
 import ru.rudikov_bn.Tasks;
 import ru.rudikov_bn.array.Array;
 import ru.rudikov_bn.number.Numeral;
 
-public class Zuckerman extends AppCompatActivity implements Tasks {
+public class Zuckerman implements Tasks {
 
 
     public boolean isVerify(int value) {

@@ -1,4 +1,4 @@
-package ru.rudikov_bn.lishler;
+package ru.rudikov_bn.tasks.lishler;
 
 
 /**
@@ -19,11 +19,11 @@ public class Lishler implements Tasks {
         return startLogic(value, countAddingNumberMirror);
     }
 
-    public static boolean startLogic(int value, Integer countAddingNumberMirror) {
+    private boolean startLogic(int value, Integer countAddingNumberMirror) {
 
         boolean flagDigitsIsLishler = BaseFunction.valueIsPalindrome(value);
 
-        if ((countAddingNumberMirror < 10) && flagDigitsIsLishler) {
+        if ((countAddingNumberMirror < 10) && !flagDigitsIsLishler) {
             countAddingNumberMirror++;
             int addMirrorAndValue = value + BaseFunction.mirrorNumber(value);
             return startLogic(addMirrorAndValue, countAddingNumberMirror);

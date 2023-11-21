@@ -1,4 +1,4 @@
-package ru.rudikov_bn.best_number;
+package ru.rudikov_bn.tasks.best_number;
 
 import java.util.Map;
 import ru.rudikov_bn.Tasks;
@@ -17,7 +17,7 @@ public class BestNumber implements Tasks {
         return startLogic(value);
     }
 
-    public static boolean startLogic(int value){
+    private static boolean startLogic(int value){
         return checkToSimpleNumberAndHisMirrorNumber(value)
                 && checkToValueMirrorHasCountNumberMirror(value)
                 && numberInBinaryCodingIsPalindrome(value);

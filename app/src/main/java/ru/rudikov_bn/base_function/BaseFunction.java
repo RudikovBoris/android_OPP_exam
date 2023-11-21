@@ -5,19 +5,20 @@ import android.widget.EditText;
 import java.util.HashMap;
 import java.util.Map;
 
-import ru.rudikov_bn.armstrong.Armstrong;
-import ru.rudikov_bn.friends_number.FriendsNumber;
-import ru.rudikov_bn.kaprecara.Kapricara;
-import ru.rudikov_bn.kapricara_square.KapricaraSquare;
-import ru.rudikov_bn.kita_package.Kita;
-import ru.rudikov_bn.niven_pacage.Niven;
+import ru.rudikov_bn.Tasks;
+import ru.rudikov_bn.tasks.armstrong.Armstrong;
+import ru.rudikov_bn.tasks.friends_number.FriendsNumber;
+import ru.rudikov_bn.tasks.kaprecara.Kapricara;
+import ru.rudikov_bn.tasks.kapricara_square.KapricaraSquare;
+import ru.rudikov_bn.tasks.kita.Kita;
+import ru.rudikov_bn.tasks.niven.Niven;
 import ru.rudikov_bn.array.Array;
-import ru.rudikov_bn.best_number.BestNumber;
-import ru.rudikov_bn.happy_number.HappyNumber;
-import ru.rudikov_bn.lishler.Lishler;
+import ru.rudikov_bn.tasks.best_number.BestNumber;
+import ru.rudikov_bn.tasks.happy_number.HappyNumber;
+import ru.rudikov_bn.tasks.lishler.Lishler;
 import ru.rudikov_bn.log.LogWindow;
 import ru.rudikov_bn.number.Numeral;
-import ru.rudikov_bn.zuckerman.Zuckerman;
+import ru.rudikov_bn.tasks.zuckerman.Zuckerman;
 
 public class BaseFunction {
     LogWindow logWindow;
@@ -34,7 +35,7 @@ public class BaseFunction {
 
     }
 
-    public void getResultCalculation(Class tasks) {
+    public void getResultCalculation(Tasks tasks) {
 
         if (!rangeStart.getText().toString().equals("")) {
             this.start = Integer.parseInt(rangeStart.getText().toString());
@@ -54,13 +55,13 @@ public class BaseFunction {
             return;
         }
 
-        if (finish - start > 1000) {
+        if (finish - start > 10000) {
             logWindow.out("Не рационально длинный поиск");
             return;
         }
 
 
-        logWindow.out(String.format("Диапазон поиска: от %s  до %s %n", start, finish));
+        logWindow.out(String.format("Диапазон поиска: от %d  до %d \n", start, finish));
 
         logWindow.out("Поиск запущен");
         for (int i = start; i <= finish; ++i) {
@@ -72,38 +73,39 @@ public class BaseFunction {
         logWindow.out("Поиск завершен");
     }
 
-    public boolean fabricTasks(Class tasks, int number) {
+    public boolean fabricTasks(Tasks tasks, int number) {
+
 
         if (tasks.getClass().equals(Zuckerman.class)) {
-             Zuckerman zuckerman = new Zuckerman();
+             var zuckerman = new Zuckerman();
                    return  zuckerman.isVerify(number);
         }else if (tasks.getClass().equals(Niven.class)){
-            Niven niven = new Niven();
+            var niven = new Niven();
             return niven.isVerify(number);
         }else if (tasks.getClass().equals(Lishler.class)){
-            Lishler lishler = new Lishler();
-            lishler.isVerify(number);
+            var lishler = new Lishler();
+            return lishler.isVerify(number);
         }else if (tasks.getClass().equals(BestNumber.class)){
-            BestNumber bestNumber = new BestNumber();
-            bestNumber.isVerify(number);
+            var bestNumber = new BestNumber();
+            return bestNumber.isVerify(number);
         }else if (tasks.getClass().equals(HappyNumber.class)){
-            HappyNumber happyNumber = new HappyNumber();
-            happyNumber.isVerify(number);
+            var happyNumber = new HappyNumber();
+            return happyNumber.isVerify(number);
         }else if (tasks.getClass().equals(Kita.class)){
-            Kita kita = new Kita();
-            kita.isVerify(number);
+            var kita = new Kita();
+            return kita.isVerify(number);
         }else if (tasks.getClass().equals(Kapricara.class)){
-            Kapricara kapricara = new Kapricara();
-            kapricara.isVerify(number);
+            var kapricara = new Kapricara();
+            return kapricara.isVerify(number);
         }else if (tasks.getClass().equals(KapricaraSquare.class)){
-            KapricaraSquare kapricaraSquare = new KapricaraSquare();
-            kapricaraSquare.isVerify(number);
+            var kapricaraSquare = new KapricaraSquare();
+            return kapricaraSquare.isVerify(number);
         }else if (tasks.getClass().equals(Armstrong.class)){
-            Armstrong armstrong = new Armstrong();
-            armstrong.isVerify(number);
+            var armstrong = new Armstrong();
+            return armstrong.isVerify(number);
         }else if(tasks.getClass().equals(FriendsNumber.class)){
-            FriendsNumber friendsNumber = new FriendsNumber();
-            friendsNumber.isVerify(number);
+            var friendsNumber = new FriendsNumber();
+            return friendsNumber.isVerify(number);
         }
         return false;
     }

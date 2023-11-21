@@ -1,4 +1,4 @@
-package ru.rudikov_bn.friends_number;
+package ru.rudikov_bn.tasks.friends_number;
 
 /**
  * Разработать программу для поиска дружественных чисел в указываемом диапазоне десятичной
@@ -25,7 +25,7 @@ public class FriendsNumber implements Tasks {
         return value == secondFriends;
     }
 
-    public int foundFriend(int value) {
+    private int foundFriend(int value) {
         ArrayList<Integer> arrayList = new ArrayList<>();
         for (int result = 1; result < value; result++) {
             if (value % result == 0) {

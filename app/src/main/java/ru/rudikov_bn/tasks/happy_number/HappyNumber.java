@@ -1,4 +1,4 @@
-package ru.rudikov_bn.happy_number;
+package ru.rudikov_bn.tasks.happy_number;
 
 import ru.rudikov_bn.Tasks;
 import ru.rudikov_bn.number.Numeral;
@@ -21,7 +21,7 @@ public class HappyNumber implements Tasks {
         return happyNumberLogic(value, countSteps);
     }
 
-    private static boolean happyNumberLogic(int value, Integer countSteps) {
+    private boolean happyNumberLogic(int value, Integer countSteps) {
         countSteps++;
         int[] digits = Numeral.getDigits(value);
         int newValue = 0;
