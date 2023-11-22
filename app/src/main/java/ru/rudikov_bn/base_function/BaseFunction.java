@@ -65,7 +65,7 @@ public class BaseFunction {
 
         logWindow.out("Поиск запущен");
         for (int i = start; i <= finish; ++i) {
-            if (fabricTasks(tasks, i)) {
+            if (tasks.isVerify(i)) {
                 logWindow.out(i);
             }
         }
@@ -73,42 +73,7 @@ public class BaseFunction {
         logWindow.out("Поиск завершен");
     }
 
-    public boolean fabricTasks(Tasks tasks, int number) {
 
-
-        if (tasks.getClass().equals(Zuckerman.class)) {
-             var zuckerman = new Zuckerman();
-                   return  zuckerman.isVerify(number);
-        }else if (tasks.getClass().equals(Niven.class)){
-            var niven = new Niven();
-            return niven.isVerify(number);
-        }else if (tasks.getClass().equals(Lishler.class)){
-            var lishler = new Lishler();
-            return lishler.isVerify(number);
-        }else if (tasks.getClass().equals(BestNumber.class)){
-            var bestNumber = new BestNumber();
-            return bestNumber.isVerify(number);
-        }else if (tasks.getClass().equals(HappyNumber.class)){
-            var happyNumber = new HappyNumber();
-            return happyNumber.isVerify(number);
-        }else if (tasks.getClass().equals(Kita.class)){
-            var kita = new Kita();
-            return kita.isVerify(number);
-        }else if (tasks.getClass().equals(Kapricara.class)){
-            var kapricara = new Kapricara();
-            return kapricara.isVerify(number);
-        }else if (tasks.getClass().equals(KapricaraSquare.class)){
-            var kapricaraSquare = new KapricaraSquare();
-            return kapricaraSquare.isVerify(number);
-        }else if (tasks.getClass().equals(Armstrong.class)){
-            var armstrong = new Armstrong();
-            return armstrong.isVerify(number);
-        }else if(tasks.getClass().equals(FriendsNumber.class)){
-            var friendsNumber = new FriendsNumber();
-            return friendsNumber.isVerify(number);
-        }
-        return false;
-    }
 
     public static int mirrorNumber(int number) {
         int newNumber;
