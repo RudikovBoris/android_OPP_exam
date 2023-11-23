@@ -9,7 +9,7 @@ import java.util.Calendar;
 
 public class LogWindow {
 
-    private TextView textView;
+    private final TextView textView;
 
     public LogWindow(TextView textView) {
         this.textView = textView;

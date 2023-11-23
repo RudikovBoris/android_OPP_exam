@@ -6,24 +6,15 @@ import java.util.HashMap;
 import java.util.Map;
 
 import ru.rudikov_bn.Tasks;
-import ru.rudikov_bn.tasks.armstrong.Armstrong;
-import ru.rudikov_bn.tasks.friends_number.FriendsNumber;
-import ru.rudikov_bn.tasks.kaprecara.Kapricara;
-import ru.rudikov_bn.tasks.kapricara_square.KapricaraSquare;
-import ru.rudikov_bn.tasks.kita.Kita;
-import ru.rudikov_bn.tasks.niven.Niven;
 import ru.rudikov_bn.array.Array;
-import ru.rudikov_bn.tasks.best_number.BestNumber;
-import ru.rudikov_bn.tasks.happy_number.HappyNumber;
-import ru.rudikov_bn.tasks.lishler.Lishler;
 import ru.rudikov_bn.log.LogWindow;
 import ru.rudikov_bn.number.Numeral;
-import ru.rudikov_bn.tasks.zuckerman.Zuckerman;
+
 
 public class BaseFunction {
-    LogWindow logWindow;
-    EditText rangeStart;
-    EditText rangeFinish;
+    final LogWindow logWindow;
+    final EditText rangeStart;
+    final EditText rangeFinish;
     int start;
     int finish;
 
@@ -55,13 +46,13 @@ public class BaseFunction {
             return;
         }
 
-        if (finish - start > 10000) {
+        if (finish - start > 1000) {
             logWindow.out("Не рационально длинный поиск");
             return;
         }
 
 
-        logWindow.out(String.format("Диапазон поиска: от %d  до %d \n", start, finish));
+        logWindow.out(String.format("Диапазон поиска: от %d  до %d %n", start, finish));
 
         logWindow.out("Поиск запущен");
         for (int i = start; i <= finish; ++i) {
@@ -136,6 +127,7 @@ public class BaseFunction {
             int reverseCount = digits.length - i - 1;
             if (digits[i] != digits[reverseCount]) {
                 flagDigitsIsLishler = false;
+                break;
             }
         }
         return flagDigitsIsLishler;

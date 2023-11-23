@@ -1,6 +1,7 @@
 package ru.rudikov_bn.tasks.best_number;
 
 import java.util.Map;
+
 import ru.rudikov_bn.Tasks;
 import ru.rudikov_bn.base_function.BaseFunction;
 
@@ -17,42 +18,43 @@ public class BestNumber implements Tasks {
         return startLogic(value);
     }
 
-    private static boolean startLogic(int value){
+    private static boolean startLogic(int value) {
         return checkToSimpleNumberAndHisMirrorNumber(value)
                 && checkToValueMirrorHasCountNumberMirror(value)
                 && numberInBinaryCodingIsPalindrome(value);
     }
 
-    private static boolean checkToSimpleNumberAndHisMirrorNumber(int value){
-        if (!BaseFunction.simpleNumber(value)){
+    private static boolean checkToSimpleNumberAndHisMirrorNumber(int value) {
+        if (!BaseFunction.simpleNumber(value)) {
             return false;
         } else {
-            if (!BaseFunction.simpleNumber(BaseFunction.mirrorNumber(value))){
-                return false;
-            }
+            return !BaseFunction.simpleNumber(BaseFunction.mirrorNumber(value));
         }
-
-
-        return true;
     }
-    private static boolean checkToValueMirrorHasCountNumberMirror(int value){
+
+    private static boolean checkToValueMirrorHasCountNumberMirror(int value) {
 
         Map<Integer, Integer> mapWithAllSimpleNumberForAss = BaseFunction.getMapWithSimpleNumberForBiggestValue(value);
 
-        if (!mapWithAllSimpleNumberForAss.isEmpty()) {
-            int countValue = mapWithAllSimpleNumberForAss.get(Integer.valueOf(value));
-            int countMirrorValue = mapWithAllSimpleNumberForAss.get(Integer.valueOf(BaseFunction.mirrorNumber(value)));
+            if (!mapWithAllSimpleNumberForAss.isEmpty()
+                    && mapWithAllSimpleNumberForAss.containsKey(value)
+                    && mapWithAllSimpleNumberForAss.containsKey(BaseFunction.mirrorNumber(value))) {
+                Integer countValueInteger = mapWithAllSimpleNumberForAss.get(value);
+                Integer countMirrorValueInteger = mapWithAllSimpleNumberForAss.get(BaseFunction.mirrorNumber(value));
+                if (countMirrorValueInteger != null && countValueInteger != null) {
+                    int countValue = countValueInteger;
+                    int countMirrorValue = countMirrorValueInteger;
 
-            if (countValue == BaseFunction.mirrorNumber(countMirrorValue) && countValue == BaseFunction.getResultMultiplicationElementsNumber(value)) {
-                return true;
+                    return (countValue == BaseFunction.mirrorNumber(countMirrorValue)
+                            && countValue == BaseFunction.getResultMultiplicationElementsNumber(value));
+                }
             }
-        }
         return false;
     }
 
-    private static boolean numberInBinaryCodingIsPalindrome(int value){
+    private static boolean numberInBinaryCodingIsPalindrome(int value) {
         String binaryString = Integer.toBinaryString(value);
-        int binaryInt= Integer.parseInt(binaryString);
+        int binaryInt = Integer.parseInt(binaryString);
         return BaseFunction.valueIsPalindrome(binaryInt);
     }
 
